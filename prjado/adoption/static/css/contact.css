@@ -1,0 +1,116 @@
+/* contact.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-logo {
+  width: 50px !important; 
+  height: 50px !important;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.header-menu a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Contact Section Styles */
+.contact_section {
+  padding: 50px 0;
+}
+
+.form_container {
+  background-color: #f2f2f2;
+  padding: 30px;
+}
+
+.heading_container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heading_container h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.heading_container p {
+  font-size: 16px;
+  color: #888;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.message-box {
+  height: 100px;
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: blue;
+}
+
+.map_container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.map-responsive {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0 10px;
+  }
+
+  .col-md-5.offset-md-1,
+  .col-md-6.px-0 {
+    width: 100%;
+  }
+}
+

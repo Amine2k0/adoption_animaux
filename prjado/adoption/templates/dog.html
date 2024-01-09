@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Type d'animal</title>
+    <style>
+        /* Styles CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .header-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-menu a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .animal-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .animal-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .animal-info {
+            flex-grow: 1;
+        }
+
+        .animal-info p {
+            margin: 5px 0;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: blue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+    </style>
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="header-logo" src="{% static 'images/logo33.png' %}" alt="Logo">
+            <div class="header-menu">
+                <a href="index.html">Main</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <h1>Type d'animal</h1>
+        <select id="animal-select" onchange="javascript:handleSelect(this)">
+            <option value="dog" >Chien</option>
+            <option value="ois" >Oiseau</option>
+            <option value="cat" >Chat</option>
+        </select>
+         {% for animal in animals%}
+        <div id="animal-details" class="animal-item">
+            <img id="animal-image" src="" alt="">
+            <div class="animal-info">
+                <p id="animal-name">Nom: {{ animal.Nom }}</p>
+                <p id="animal-age">Age: {{ animal.Age }} </p>
+                <p id="animal-vaccination">Status vaccinal:  {{ animal.statut_vaccial }}</p>
+                <p id="animal-sterilization">Stérilisation:  {{ animal.sterillisation }}</p>
+            </div>
+            <a href="adoption_form.html"><button id="adopt-button">Adopte moi</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+<script type="text/javascript">
+    function handleSelect(elm)
+    {
+       window.location = elm.value+".html";
+    }
+  </script>
+</html>
